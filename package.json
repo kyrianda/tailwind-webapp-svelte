@@ -10,12 +10,13 @@
     "dev": "rollup -c -w",
     "start": "sirv public -s",
     "build:tailwind": "tailwind build public/assets/styles/index.css -o public/assets/styles/tailwind.css",
-    "build:fontawesome": "mkdir -p public/assets/vendor/@fortawesome/fontawesome-free/webfonts && mkdir -p public/assets/vendor/@fortawesome/fontawesome-free/css && cp -a ./node_modules/@fortawesome/fontawesome-free/webfonts public/assets/vendor/@fortawesome/fontawesome-free/ && cp ./node_modules/@fortawesome/fontawesome-free/css/all.min.css public/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
+    "build:fontawesome": "mkdirp public/assets/vendor/@fortawesome/fontawesome-free/webfonts && mkdirp public/assets/vendor/@fortawesome/fontawesome-free/css && cp -a ./node_modules/@fortawesome/fontawesome-free/webfonts public/assets/vendor/@fortawesome/fontawesome-free/ && cp ./node_modules/@fortawesome/fontawesome-free/css/all.min.css public/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && rm -rf public/build && npm install && npm run build:tailwind && npm run build:fontawesome && npm run dev"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "15.1.0",
     "@rollup/plugin-node-resolve": "9.0.0",
+    "mkdirp": "^1.0.4",
     "rollup": "2.28.1",
     "rollup-plugin-livereload": "2.0.0",
     "rollup-plugin-svelte": "6.0.1",
